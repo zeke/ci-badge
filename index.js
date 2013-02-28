@@ -11,18 +11,21 @@ module.exports = Badge;
 
 function Badge() {
   this.browsers = [];
+  this.padding = 10;
   this.logoSize = 75;
   this.fontSize = 18;
   this.transparent = false;
 }
 
 Badge.prototype.width = function(){
-  return this.logoSize * this.browsers.length;
+  var pad = this.padding * 2;
+  return pad + this.logoSize * this.browsers.length;
 };
 
 Badge.prototype.height = function(){
   var n = max(this.browsers, 'versions.length');
-  return this.logoSize + (n * this.fontSize);
+  var pad = this.padding * 2;
+  return pad + this.logoSize + (n * this.fontSize);
 };
 
 Badge.prototype.browser = function(name){
@@ -43,6 +46,8 @@ Badge.prototype.render = function(){
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, w, h);
   }
+
+  ctx.translate(this.padding, this.padding);
 
   this.browsers.forEach(function(b){
     b.draw(ctx, {
