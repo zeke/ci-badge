@@ -46,7 +46,7 @@ Browser.prototype.draw = function(ctx, options){
 
   this.versions.forEach(function(version){
     ctx.translate(0, fontSize * 1.2);
-    ctx.fillStyle = 'black';
+    ctx.fillStyle = options.colors[version.type];
     ctx.fillText(version.string, 0, 0);
   });
 

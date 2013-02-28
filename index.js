@@ -15,7 +15,12 @@ function Badge() {
   this.logoSize = 75;
   this.fontSize = 18;
   this.transparent = false;
+  this.colors({ pass: '#239c8e', fail: '#c00' });
 }
+
+Badge.prototype.colors = function(colors){
+  this._colors = colors;
+};
 
 Badge.prototype.width = function(){
   var pad = this.padding * 2;
@@ -54,7 +59,8 @@ Badge.prototype.render = function(){
   this.browsers.forEach(function(b){
     b.draw(ctx, {
       size: size,
-      fontSize: self.fontSize
+      fontSize: self.fontSize,
+      colors: self._colors
     });
 
     ctx.translate(size, 0);
