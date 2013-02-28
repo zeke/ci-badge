@@ -19,7 +19,9 @@ function Badge() {
 
 Badge.prototype.width = function(){
   var pad = this.padding * 2;
-  return pad + this.logoSize * this.browsers.length;
+  var len = this.browsers.length;
+  var bpad = this.browsers[0].padding * len;
+  return pad + bpad + (this.logoSize * len);
 };
 
 Badge.prototype.height = function(){

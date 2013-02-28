@@ -12,6 +12,7 @@ function Browser(name) {
   this.name = name;
   this.image = 'logos/' + name + '.png';
   this.versions = [];
+  this.padding = 12;
 }
 
 Browser.prototype.pass = function(version){
@@ -37,6 +38,7 @@ Browser.prototype.draw = function(ctx, options){
   var img = new Image;
   img.src = this.image;
 
+  ctx.translate(this.padding, 0);
   ctx.save();
   ctx.drawImage(img, 0, 0, size, size);
   ctx.translate(10, size * 1.05);
