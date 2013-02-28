@@ -12,7 +12,7 @@ module.exports = Badge;
 function Badge() {
   this.browsers = [];
   this.logoSize = 75;
-  this.fontSize = 20;
+  this.fontSize = 18;
   this.transparent = false;
 }
 
