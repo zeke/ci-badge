@@ -3,7 +3,7 @@
 
   Browser CI badge generation using node-canvas.
 
-  ![](http://cdn.dropmark.com/41933/908757407dff55861db7b527d600085245908943/small.png)
+  ![](http://cdn.dropmark.com/41933/4243338cf156b1fd92f1b4307928d1d376c4de14/small.png)
 
 ## Installation
 
