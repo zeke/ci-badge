@@ -13,7 +13,7 @@ badge
   .pass('14.0')
   .pass('15.0')
   .fail('16.0')
-  .fail('nightly')
+  .pass('nightly')
 
 badge
   .browser('safari')
@@ -31,9 +31,9 @@ badge
 
 badge
   .browser('ie')
-  .pass('7.0')
-  .pass('8.0')
-  .pass('9.0')
+  .fail('7.0')
+  .fail('8.0')
+  .fail('9.0')
 
 badge
   .browser('opera')
