@@ -15,7 +15,7 @@ function Badge() {
   this.logoSize = 75;
   this.fontSize = 18;
   this.transparent = false;
-  this.colors({ pass: '#239c8e', fail: '#c00' });
+  this.colors({ pass: '#26aa9b', fail: '#c00' });
 }
 
 Badge.prototype.colors = function(colors){
