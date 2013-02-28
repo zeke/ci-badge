@@ -41,3 +41,4 @@ badge
   .pass('11.0')
 
 fs.writeFile('out.png', badge.render().toBuffer());
+console.log('created ./out.png');

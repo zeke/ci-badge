@@ -7,7 +7,17 @@ var Browser = require('./browser')
   , Canvas = require('canvas')
   , max = require('max-component');
 
+/**
+ * Expose `Badge`.
+ */
+
 module.exports = Badge;
+
+/**
+ * Initialize a new badge.
+ *
+ * @api public
+ */
 
 function Badge() {
   this.browsers = [];
@@ -18,9 +28,22 @@ function Badge() {
   this.colors({ pass: '#00a0c1', fail: '#cc2d23' });
 }
 
+/**
+ * Set `.pass` and `.fail` colors.
+ *
+ * @param {Object} colors
+ * @api public
+ */
+
 Badge.prototype.colors = function(colors){
   this._colors = colors;
 };
+
+/**
+ * Get width.
+ *
+ * @api public
+ */
 
 Badge.prototype.width = function(){
   var pad = this.padding * 2;
@@ -29,17 +52,38 @@ Badge.prototype.width = function(){
   return pad + bpad + (this.logoSize * len);
 };
 
+/**
+ * Get height.
+ *
+ * @api public
+ */
+
 Badge.prototype.height = function(){
   var n = max(this.browsers, 'versions.length');
   var pad = this.padding * 2;
   return pad + this.logoSize + (n * this.fontSize);
 };
 
+/**
+ * Add browser `name` and return a `Browser`.
+ *
+ * @param {String} name
+ * @return {Browser}
+ * @api public
+ */
+
 Badge.prototype.browser = function(name){
   var browser = new Browser(name);
   this.browsers.push(browser);
   return browser;
 };
+
+/**
+ * Render the badge and return a canvas.
+ *
+ * @return {Canvas}
+ * @api public
+ */
 
 Badge.prototype.render = function(){
   var self = this;

@@ -6,7 +6,18 @@
 var Canvas = require('canvas')
   , Image = Canvas.Image;
 
+/**
+ * Expose `Browser`.
+ */
+
 module.exports = Browser;
+
+/**
+ * Initialize browser `name`.
+ *
+ * @param {String} name
+ * @api public
+ */
 
 function Browser(name) {
   this.name = name;
@@ -15,13 +26,38 @@ function Browser(name) {
   this.padding = 12;
 }
 
+/**
+ * Pass `version`.
+ *
+ * @param {String} version
+ * @return {Browser} self
+ * @api public
+ */
+
 Browser.prototype.pass = function(version){
   return this.add('pass', version);
 };
 
+/**
+ * Fail `version`.
+ *
+ * @param {String} version
+ * @return {Browser} self
+ * @api public
+ */
+
 Browser.prototype.fail = function(version){
   return this.add('fail', version);
 };
+
+/**
+ * Add `version` with `type`.
+ *
+ * @param {String} version
+ * @param {String} type
+ * @return {Browser} self
+ * @api private
+ */
 
 Browser.prototype.add = function(type, version){
   this.versions.push({
@@ -31,6 +67,14 @@ Browser.prototype.add = function(type, version){
 
   return this;
 };
+
+/**
+ * Draw the browser onto `ctx`.
+ *
+ * @param {String} ctx
+ * @param {Object} options
+ * @api private
+ */
 
 Browser.prototype.draw = function(ctx, options){
   var size = options.size;
