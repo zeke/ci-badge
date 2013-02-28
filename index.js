@@ -13,8 +13,9 @@ function Badge() {
 }
 
 Badge.prototype.browser = function(name){
-  this.browsers.push(new Browser(name));
-  return this;
+  var browser = new Browser(name);
+  this.browsers.push(browser);
+  return browser;
 };
 
 Badge.prototype.render = function(){

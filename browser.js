@@ -20,4 +20,6 @@ Browser.prototype.add = function(type, version){
     type: type,
     version: version
   });
+
+  return this;
 };
