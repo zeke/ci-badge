@@ -77,21 +77,25 @@ Browser.prototype.add = function(type, version){
  */
 
 Browser.prototype.draw = function(ctx, options){
+  var pad = this.padding;
   var size = options.size;
   var fontSize = options.fontSize;
   var img = new Image;
   img.src = this.image;
 
-  ctx.translate(this.padding, 0);
+  ctx.translate(pad, 0);
   ctx.save();
   ctx.drawImage(img, 0, 0, size, size);
   ctx.translate(10, size * 1.05);
   ctx.font = fontSize + 'px Helvetica';
 
   this.versions.forEach(function(version){
+    var x = 0;
     ctx.translate(0, fontSize * 1.2);
     ctx.fillStyle = options.colors[version.type];
-    ctx.fillText(version.string, 0, 0);
+    var w = ctx.measureText(version.string).width;
+    if (options.center) x = (size - (pad * 2) - w) / 2;
+    ctx.fillText(version.string, x, 0);
   });
 
   ctx.restore();
