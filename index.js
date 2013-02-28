@@ -11,8 +11,9 @@ module.exports = Badge;
 
 function Badge() {
   this.browsers = [];
-  this.logoSize = 60;
+  this.logoSize = 75;
   this.fontSize = 20;
+  this.transparent = false;
 }
 
 Badge.prototype.width = function(){
@@ -38,8 +39,10 @@ Badge.prototype.render = function(){
   var ctx = canvas.getContext('2d');
   var size = this.logoSize;
 
-  ctx.fillStyle = 'white';
-  ctx.fillRect(0, 0, w, h);
+  if (!this.transparent) {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, w, h);
+  }
 
   this.browsers.forEach(function(b){
     b.draw(ctx, {
