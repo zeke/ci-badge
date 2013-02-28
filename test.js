@@ -13,7 +13,6 @@ badge
   .pass('14.0')
   .pass('15.0')
   .fail('16.0')
-  .pass('nightly')
 
 badge
   .browser('safari')

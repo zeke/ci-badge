@@ -24,7 +24,7 @@ function Badge() {
   this.padding = 10;
   this.logoSize = 75;
   this.fontSize = 18;
-  this.center = false;
+  this.center = true;
   this.transparent = false;
   this.colors({ pass: '#00a0c1', fail: '#cc2d23' });
 }
