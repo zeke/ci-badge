@@ -22,14 +22,22 @@ badge
   .pass('5.1.1')
 
 badge
-  .browser('opera')
-  .pass('10.6')
+  .browser('firefox')
+  .pass('10.0')
   .pass('11.0')
+  .pass('12.0')
+  .pass('13.0')
+  .pass('14.0')
 
 badge
   .browser('ie')
   .pass('7.0')
   .pass('8.0')
   .pass('9.0')
+
+badge
+  .browser('opera')
+  .pass('10.6')
+  .pass('11.0')
 
 fs.writeFile('out.png', badge.render().toBuffer());
