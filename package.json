@@ -1,6 +1,6 @@
 {
   "name": "ci-badge",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "browser ci badge",
   "dependencies": {
     "canvas": "~1.0.1",
