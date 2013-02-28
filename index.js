@@ -11,17 +11,17 @@ module.exports = Badge;
 
 function Badge() {
   this.browsers = [];
-  this.columnWidth = 100;
-  this.versionHeight = 20;
+  this.logoSize = 60;
+  this.fontSize = 20;
 }
 
 Badge.prototype.width = function(){
-  return this.columnWidth * this.browsers.length;
+  return this.logoSize * this.browsers.length;
 };
 
 Badge.prototype.height = function(){
   var n = max(this.browsers, 'versions.length');
-  return this.columnWidth + (n * this.versionHeight);
+  return this.logoSize + (n * this.fontSize);
 };
 
 Badge.prototype.browser = function(name){
@@ -36,7 +36,7 @@ Badge.prototype.render = function(){
   var h = this.height() * 1.2;
   var canvas = new Canvas(w, h);
   var ctx = canvas.getContext('2d');
-  var size = this.columnWidth;
+  var size = this.logoSize;
 
   ctx.fillStyle = 'white';
   ctx.fillRect(0, 0, w, h);
@@ -44,7 +44,7 @@ Badge.prototype.render = function(){
   this.browsers.forEach(function(b){
     b.draw(ctx, {
       size: size,
-      fontSize: self.versionHeight
+      fontSize: self.fontSize
     });
 
     ctx.translate(size, 0);
