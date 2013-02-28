@@ -39,11 +39,11 @@ Browser.prototype.draw = function(ctx, options){
 
   ctx.save();
   ctx.drawImage(img, 0, 0, size, size);
-  ctx.translate(10, size * .15);
+  ctx.translate(10, size * 1.05);
   ctx.font = fontSize + 'px Helvetica';
 
   this.versions.forEach(function(version){
-    ctx.translate(0, size);
+    ctx.translate(0, fontSize * 1.2);
     ctx.fillStyle = 'black';
     ctx.fillText(version.string, 0, 0);
   });

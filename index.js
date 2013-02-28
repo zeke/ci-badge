@@ -12,7 +12,7 @@ module.exports = Badge;
 function Badge() {
   this.browsers = [];
   this.columnWidth = 100;
-  this.versionHeight = 15;
+  this.versionHeight = 20;
 }
 
 Badge.prototype.width = function(){
@@ -33,7 +33,7 @@ Badge.prototype.browser = function(name){
 Badge.prototype.render = function(){
   var self = this;
   var w = this.width();
-  var h = this.height();
+  var h = this.height() * 1.2;
   var canvas = new Canvas(w, h);
   var ctx = canvas.getContext('2d');
   var size = this.columnWidth;
