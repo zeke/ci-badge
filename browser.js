@@ -94,7 +94,7 @@ Browser.prototype.draw = function(ctx, options){
     ctx.translate(0, fontSize * 1.2);
     ctx.fillStyle = options.colors[version.type];
     var w = ctx.measureText(version.string).width;
-    if (options.center) x = (size - (pad * 2) - w) / 2;
+    if (options.center) x = (size / 2 - pad) - w / 2;
     ctx.fillText(version.string, x, 0);
   });
 

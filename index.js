@@ -101,7 +101,9 @@ Badge.prototype.render = function(){
 
   ctx.translate(this.padding, this.padding);
 
-  this.browsers.forEach(function(b){
+  this.browsers.forEach(function(b, i){
+    if (!i) b.padding /= 2;
+
     b.draw(ctx, {
       size: size,
       fontSize: self.fontSize,
