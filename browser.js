@@ -25,7 +25,7 @@ Browser.prototype.fail = function(version){
 Browser.prototype.add = function(type, version){
   this.versions.push({
     type: type,
-    version: version
+    string: version
   });
 
   return this;
@@ -37,5 +37,16 @@ Browser.prototype.draw = function(ctx, options){
   var img = new Image;
   img.src = this.image;
 
+  ctx.save();
   ctx.drawImage(img, 0, 0, size, size);
+  ctx.translate(10, size * .15);
+  ctx.font = fontSize + 'px Helvetica';
+
+  this.versions.forEach(function(version){
+    ctx.translate(0, size);
+    ctx.fillStyle = 'black';
+    ctx.fillText(version.string, 0, 0);
+  });
+
+  ctx.restore();
 };

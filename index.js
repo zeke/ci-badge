@@ -12,7 +12,7 @@ module.exports = Badge;
 function Badge() {
   this.browsers = [];
   this.columnWidth = 100;
-  this.versionHeight = 25;
+  this.versionHeight = 15;
 }
 
 Badge.prototype.width = function(){
