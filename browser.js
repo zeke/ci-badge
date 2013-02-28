@@ -1,4 +1,11 @@
 
+/**
+ * Module dependencies.
+ */
+
+var Canvas = require('canvas')
+  , Image = Canvas.Image;
+
 module.exports = Browser;
 
 function Browser(name) {
@@ -22,4 +29,13 @@ Browser.prototype.add = function(type, version){
   });
 
   return this;
+};
+
+Browser.prototype.draw = function(ctx, options){
+  var size = options.size;
+  var fontSize = options.fontSize;
+  var img = new Image;
+  img.src = this.image;
+
+  ctx.drawImage(img, 0, 0, size, size);
 };
