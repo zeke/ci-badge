@@ -1,9 +1,15 @@
 
-# ci-badges
+# ci-badge
 
   Browser CI badge generation using node-canvas.
 
   ![](http://cdn.dropmark.com/41933/908757407dff55861db7b527d600085245908943/small.png)
+
+## Installation
+
+```
+$ npm install ci-badge
+```
 
 ## Example
 
