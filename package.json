@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "browser ci badge",
   "dependencies": {
-    "canvas": "~1.0.1"
+    "canvas": "~1.0.1",
+    "max-component": "~1.0.0"
   }
 }
